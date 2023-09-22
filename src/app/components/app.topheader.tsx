@@ -13,7 +13,12 @@ const AppTopHeader = () => {
 	} = useSWR(`https://beta.odecompany.com/wp-json/api/v1/topheader`, fetcher);
 
 	if (error) return <div>Data failed</div>;
-	if (isLoading) return <div>Loading ...</div>;
+	if (isLoading)
+		return (
+			<div className="loading">
+				<div className="loader"></div>
+			</div>
+		);
 
 	function Search(_value: string): void {
 		throw new Error("Function not implemented.");
@@ -26,6 +31,13 @@ const AppTopHeader = () => {
 					<ul id="menu-menu-top" className="nav-menu-top flex">
 						{topheader.list_menu_top.map(
 							(post: any, ids: number) => {
+								let lastPart = post.link_menu;
+
+								if (post.link_menu.startsWith("https://")) {
+									const parts = post.link_menu.split("/");
+									lastPart = parts[parts.length - 2];
+								}
+
 								return (
 									<li
 										key={ids}
@@ -33,7 +45,7 @@ const AppTopHeader = () => {
 										className="menu-item px-[20px] py-[5px] relative h-full"
 									>
 										<Link
-											href="#"
+											href={`/category/${lastPart}`}
 											className="block text-[14px] text-[#000] before-1 "
 										>
 											{post.text_menu}

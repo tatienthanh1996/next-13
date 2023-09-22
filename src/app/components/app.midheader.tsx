@@ -23,7 +23,12 @@ const AppMidHeader = () => {
 	} = useSWR(`https://beta.odecompany.com/wp-json/api/v1/topheader`, fetcher);
 
 	if (error || error2) return <div>Data failed</div>;
-	if (isLoading || isLoading2) return <div>Loading ...</div>;
+	if (isLoading || isLoading2)
+		return (
+			<div className="loading">
+				<div className="loader"></div>
+			</div>
+		);
 
 	// console.log(topheader);
 	return (

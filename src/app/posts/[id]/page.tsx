@@ -13,7 +13,12 @@ function PostNews({ params }: { params: { id: any } }) {
 	);
 
 	if (error) return <div>Data failed</div>;
-	if (isLoading) return <div>Loading ...</div>;
+	if (isLoading)
+		return (
+			<div className="loading">
+				<div className="loader"></div>
+			</div>
+		);
 
 	return (
 		<>

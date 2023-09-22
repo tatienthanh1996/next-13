@@ -7,7 +7,6 @@ import { split } from "postcss/lib/list";
 
 const AppMenuHeader = () => {
 	const fetcher = (url: string) => fetch(url).then((r) => r.json());
-	const fetcher2 = (url: string) => fetch(url).then((r) => r.json());
 
 	const {
 		data: dataMenu,
@@ -19,13 +18,15 @@ const AppMenuHeader = () => {
 		data: topheader,
 		error: error2,
 		isLoading: isLoading2,
-	} = useSWR(
-		`https://beta.odecompany.com/wp-json/api/v1/topheader`,
-		fetcher2,
-	);
+	} = useSWR(`https://beta.odecompany.com/wp-json/api/v1/topheader`, fetcher);
 
 	if (error || error2) return <div>Data failed</div>;
-	if (isLoading || isLoading2) return <div>Loading ...</div>;
+	if (isLoading || isLoading2)
+		return (
+			<div className="loading">
+				<div className="loader"></div>
+			</div>
+		);
 
 	const newData = dataMenu.filter(function (menu: {
 		cat: any;

@@ -17,7 +17,12 @@ function Cats({ params }: { params: { slug: string } }) {
 	);
 
 	if (error) return <div>Data failed</div>;
-	if (isLoading) return <div>Loading ...</div>;
+	if (isLoading)
+		return (
+			<div className="loading">
+				<div className="loader"></div>
+			</div>
+		);
 
 	console.log(data);
 	// data.forEach((item: any) => {
@@ -29,13 +34,11 @@ function Cats({ params }: { params: { slug: string } }) {
 			<h1>Param truyền vào: {params.slug}</h1>
 
 			<div className="list-cat-child">
-				{
-					data.child_category && (
-						<h2 className="my-[20px] text-3xl font-bold">
-							Danh sách các chuyên mục con
-						</h2>
-					)
-				}
+				{data.child_category && (
+					<h2 className="my-[20px] text-3xl font-bold">
+						Danh sách các chuyên mục con
+					</h2>
+				)}
 
 				{data?.child_category?.map((cat: any) => {
 					// console.log(post);

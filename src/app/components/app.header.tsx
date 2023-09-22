@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import Link from "next/link";
 import AppTopHeader from "./app.topheader";
 import AppMidHeader from "./app.midheader";

@@ -10,7 +10,12 @@ export default function About() {
 	);
 
 	if (error) return <div>Data failed</div>;
-	if (isLoading) return <div>Loading ...</div>;
+	if (isLoading)
+		return (
+			<div className="loading">
+				<div className="loader"></div>
+			</div>
+		);
 
 	console.log(data);
 
