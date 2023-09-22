@@ -56,7 +56,7 @@ const TinEmagazine = () => {
 									href={`/category/${home_data.emagazine.slug}`}
 									className="text-[14px] text-[#ee3b26]"
 								>
-									Magazine
+									{home_data.emagazine.title}
 								</Link>
 							</div>
 						</Link>
