@@ -6,6 +6,7 @@ import useSWR from "swr";
 import TinNoiBat from "./components/group-components-news/tin-noi-bat";
 import TinTieuDiem from "./components/group-components-news/tin-tieu-diem";
 import TinEmagazine from "./components/group-components-news/tin-emagazine";
+import TinMoi from "./components/group-components-news/tin-moi";
 
 export default function Home() {
 	const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -81,6 +82,48 @@ export default function Home() {
 					<Sidebar />
 				</div>
 			</div>
+
+			<div className="row-tin-3 flex flex-wrap justify-between w-[1140px] mx-auto my-[15px] max-[768px]:w-full max-[768px]:p-[15px]">
+				<div className="tin-moi-nhat w-[48%] max-[768px]:w-full">
+					<TinMoi />
+				</div>
+
+				<div className="tin-theo-chuyen-muc w-[48%] max-[768px]:w-full">
+					<div className="tin-chuyen-muc-32 border rounded p-[15px] mb-[30px]">
+
+					</div>
+
+					<div className="tin-chuyen-muc-33 border rounded p-[15px] mb-[30px]">
+
+					</div>
+
+					<div className="tin-chuyen-muc-34 border rounded p-[15px] mb-[30px]">
+
+					</div>
+
+					<div className="tin-chuyen-muc-35 flex flex-wrap justify-between">
+
+					</div>
+
+
+					<div className="tin-chuyen-muc-36 flex flex-wrap justify-between">
+						<div className="doc-nhieu w-[48%] max-[768px]:w-full">
+
+						</div>
+						<div className="sidebar w-[25%] max-[768px]:w-[300px] max-[768px]:mx-auto">
+							<Sidebar />
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div className="banner-bottom w-[1140px] mx-auto my-[15px] max-[768px]:w-full">
+				<Banners />
+			</div>
+
+
 		</main>
 	);
 }
