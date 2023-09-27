@@ -25,7 +25,7 @@ const AppTopHeader = () => {
 	}
 
 	return (
-		<div className="top-header bg-[#d5d3d3] flex flex-wrap justify-flex-end px-[5%] py-[5px] items-center">
+		<div className="top-header bg-[#d5d3d3] flex flex-wrap justify-flex-end px-[5%] py-[5px] items-center max-[768px]:hidden">
 			<div className="creatrust-button flex justify-center w-[46%] mr-auto ml-[2%] items-baseline">
 				<div className="top-menu w-full">
 					<ul id="menu-menu-top" className="nav-menu-top flex">

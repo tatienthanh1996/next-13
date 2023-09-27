@@ -32,7 +32,7 @@ const AppMidHeader = () => {
 
 	// console.log(topheader);
 	return (
-		<div className="mid-header">
+		<div className="mid-header max-[768px]:hidden">
 			<div className="hot-news-top relative px-[10%] py-[20px] flex justify-between items-center">
 				<div className="header-logo w-[20%]">
 					<Link href="/">

@@ -7,6 +7,10 @@ import TinNoiBat from "./components/group-components-news/tin-noi-bat";
 import TinTieuDiem from "./components/group-components-news/tin-tieu-diem";
 import TinEmagazine from "./components/group-components-news/tin-emagazine";
 import TinMoi from "./components/group-components-news/tin-moi";
+import TinChuyenMuc1 from "./components/group-components-news/tin-chuyen-muc-1";
+import TinChuyenMuc2 from "./components/group-components-news/tin-chuyen-muc-2";
+import TinChuyenMuc3 from "./components/group-components-news/tin-chuyen-muc-3";
+import TinDocNhieu from "./components/group-components-news/tin-doc-nhieu";
 
 export default function Home() {
 	const fetcher = (url: string) => fetch(url).then((r) => r.json());
@@ -90,15 +94,15 @@ export default function Home() {
 
 				<div className="tin-theo-chuyen-muc w-[48%] max-[768px]:w-full">
 					<div className="tin-chuyen-muc-32 border rounded p-[15px] mb-[30px]">
-
+						<TinChuyenMuc1 />
 					</div>
 
 					<div className="tin-chuyen-muc-33 border rounded p-[15px] mb-[30px]">
-
+						<TinChuyenMuc2 />
 					</div>
 
 					<div className="tin-chuyen-muc-34 border rounded p-[15px] mb-[30px]">
-
+						<TinChuyenMuc3 />
 					</div>
 
 					<div className="tin-chuyen-muc-35 flex flex-wrap justify-between">
@@ -108,9 +112,9 @@ export default function Home() {
 
 					<div className="tin-chuyen-muc-36 flex flex-wrap justify-between">
 						<div className="doc-nhieu w-[48%] max-[768px]:w-full">
-
+							<TinDocNhieu />
 						</div>
-						<div className="sidebar w-[25%] max-[768px]:w-[300px] max-[768px]:mx-auto">
+						<div className="sidebar w-[48%] max-[768px]:w-[300px] max-[768px]:mx-auto">
 							<Sidebar />
 						</div>
 					</div>
